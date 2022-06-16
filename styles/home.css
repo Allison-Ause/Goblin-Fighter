@@ -1,1 +1,61 @@
-/* CSS for home page (index.html) */
+/* main {
+    padding: 0 30px 60px 30px;
+
+    display: grid;
+    grid-template-rows: 350px 1fr;
+    grid-template-areas:
+    'left-display'
+    'right-display'
+    ;
+}
+
+@media (min-width: 600px) {
+    main {
+        grid-template-columns: 275px 1fr;
+        grid-template-areas: 
+        'left-display right-display'
+        ;
+        grid-gap: 0 40px;
+    }
+}
+
+#left-display {
+    grid-area: active-poll;
+}
+
+#right-display {
+    grid-area: past-polls;
+} */
+
+main {
+    padding: 10px;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        'message   jerk-form'
+        'hero-display     jerks'
+    ;
+}
+
+#message {
+    border: 5px dotted grey;
+    padding: 30px;
+    margin: 20px;
+}
+
+#hero-image {
+    height: 350px;
+}
+
+.jerk {
+    border: 1px solid black;
+    border-radius: 5%;
+    background: linear-gradient(44.8deg, rgba(255, 136, 102, 0.67) -53.1%, rgba(255, 221, 136, 0.28) 49%);
+    margin: 20px;
+}
+
+.jerk img {
+    height: 100px;
+}
