@@ -36,7 +36,20 @@ export function setMessage(message) {
 }
 
 export function updateHeroHP(heroHP) {
-    if (state.heroHP >= 0) {
+    if (state.heroHP <= 0) {
+        document.getElementById('hero-image').src="./assets/deadhero.png";
     //how do I replace an existing image?
+        setMessage('Oh no! You were cut to ribbons by rudeness!');
     }
+    else return;
+}
+
+export function updateJerkHP(jerk) {
+    if (jerk.hp <= 0) {
+        document.getElementById('jerk-image').src="./assets/deadjerk.png";
+        //how do I replace an existing image?
+        setMessage('You have vanquished this total jerk with your righteous punches!');
+        //update number of jerks defeated in "defeated-count" span.
+    }
+    else return;
 }

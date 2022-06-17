@@ -9,6 +9,8 @@ import createMessage from './components/Message';
 import state, {
     addJerk,
     setMessage,
+    updateHeroHP,
+    updateJerkHP,
 } from './state.js';
 
 // Create each component: 
