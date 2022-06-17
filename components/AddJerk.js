@@ -2,7 +2,7 @@ export default function createAddJerk(root, handlers) {
     const handleAddJerk = handlers.handleAddJerk;
 
     const form = root.querySelector('.form');
-    console.log(form);
+    
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new FormData(form);

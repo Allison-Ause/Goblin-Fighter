@@ -30,3 +30,13 @@ export default state;
 export function addJerk(jerk) {
     state.jerks.push(jerk);
 }
+
+export function setMessage(message) {
+    state.message = message;
+}
+
+export function updateHeroHP(heroHP) {
+    if (state.heroHP >= 0) {
+    //how do I replace an existing image?
+    }
+}

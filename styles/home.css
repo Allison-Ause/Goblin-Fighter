@@ -59,3 +59,7 @@ main {
 .jerk img {
     height: 100px;
 }
+
+.jerks {
+    padding-bottom: 75px;
+}
