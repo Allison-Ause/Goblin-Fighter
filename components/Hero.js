@@ -6,4 +6,4 @@ export default function createHero(root) {
     };
 }
 
-// this is a work in progress
+// this is a work in progress - not sure if I need it?

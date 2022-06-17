@@ -3,14 +3,10 @@ import getRandomItem from './utils.js';
 // import component creators
 import createAddJerk from './components/AddJerk.js';
 import createJerks from './components/Jerks.js';
-import createHero from './components/Hero.js';
-import createMessage from './components/Message';
+import createMessage from './components/Message.js';
 // import state and dispatch functions
 import state, {
     addJerk,
-    setMessage,
-    updateHeroHP,
-    updateJerkHP,
 } from './state.js';
 
 // Create each component: 
@@ -27,17 +23,18 @@ const CreateAddJerk = createAddJerk(document.querySelector('#add-jerk'), {
         display();
     }
 });
-
+// create function here that says handleFight, 
 const CreateJerks = createJerks(document.querySelector('.jerks'));
-const CreateHero = createHero(document.querySelector('.hero'));
-const CreateMessage = createMessage(document.querySelector('message'));
-// Roll-up display function that renders (calls with state) each component
-function display() {
-    // Call each component passing in props that are the pieces of state this component needs
+// const CreateHero = createHero(document.querySelector('#hero'));
+const CreateMessage = createMessage(document.querySelector('#message'));
+
+
+export function display() {
+
     CreateAddJerk({});
     CreateJerks({ jerks: state.jerks });
-    CreateHero({ heroHP: state.heroHP });
-    CreateMessage({ message: state.message });
+    // CreateHero({ heroHP: state.heroHP });
+    CreateMessage({ jerkMessage: state.jerkMessage, heroMessage: state.heroMessage });
 }
 
 // Call display on page load

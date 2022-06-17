@@ -7,7 +7,8 @@ export function initialize() {
     // For example:
     // state.game = null;
     // state.pastGames = [];
-    state.message = '';
+    state.heroMessage = '';
+    state.jerkMessage = '';
     state.jerks = [
         {
             name: 'Rudey Vandersteen',
@@ -31,25 +32,32 @@ export function addJerk(jerk) {
     state.jerks.push(jerk);
 }
 
-export function setMessage(message) {
-    state.message = message;
+export function setHeroMessage(message) {
+    console.log(message);
+    state.heroMessage = message;
 }
 
-export function updateHeroHP(heroHP) {
+export function setJerkMessage(message) {
+    console.log(message);
+    state.jerkMessage = message;
+}
+
+export function updateHeroHP(state) {
     if (state.heroHP <= 0) {
-        document.getElementById('hero-image').src="./assets/deadhero.png";
-    //how do I replace an existing image?
-        setMessage('Oh no! You were cut to ribbons by rudeness!');
+        document.getElementById('hero-image').src = './assets/deadhero.png';
+        setHeroMessage('Oh no! You were cut to ribbons by rudeness!');
     }
     else return;
 }
 
 export function updateJerkHP(jerk) {
     if (jerk.hp <= 0) {
-        document.getElementById('jerk-image').src="./assets/deadjerk.png";
-        //how do I replace an existing image?
-        setMessage('You have vanquished this total jerk with your righteous punches!');
+        console.log(document);
+        document.querySelector('.jerk-image').src = './assets/deadjerk.png';
+
+        setJerkMessage('You have vanquished this total jerk with your righteous punches!');
         //update number of jerks defeated in "defeated-count" span.
+
     }
     else return;
 }
