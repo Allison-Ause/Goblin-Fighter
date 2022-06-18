@@ -1,5 +1,3 @@
-import { display } from '../app.js';
-
 export default function createMessage(root) {
 
     return ({ heroMessage, jerkMessage }) => {
