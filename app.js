@@ -1,17 +1,17 @@
-// import services and utilities
+
 import getRandomItem from './utils.js';
-// import component creators
+
 import createAddJerk from './components/AddJerk.js';
 import createJerks from './components/Jerks.js';
 import createMessage from './components/Message.js';
-// import state and dispatch functions
+import createDefeatedJerks from './components/DefeatedJerks.js';
+
 import state, {
-    addJerk,
+    addJerk, setJerkMessage,
 } from './state.js';
 
-// Create each component: 
-// - pass in the root element via querySelector
-// - pass any needed handler functions as properties of an actions object 
+const CreateDefeatedJerks = createDefeatedJerks(document.querySelector('#defeated-count'));
+
 const CreateAddJerk = createAddJerk(document.querySelector('#add-jerk'), {
     handleAddJerk: (name) => {
 
@@ -20,12 +20,13 @@ const CreateAddJerk = createAddJerk(document.querySelector('#add-jerk'), {
             hp: getRandomItem(state.jerkHP)
         };
         addJerk(jerk);
+        setJerkMessage(jerk.name + ' has arrived with ' + jerk.hp + ' hp and we hate it!');
         display();
     }
 });
-// create function here that says handleFight, 
+
 const CreateJerks = createJerks(document.querySelector('.jerks'));
-// const CreateHero = createHero(document.querySelector('#hero'));
+
 const CreateMessage = createMessage(document.querySelector('#message'));
 
 
@@ -33,8 +34,8 @@ export function display() {
 
     CreateAddJerk({});
     CreateJerks({ jerks: state.jerks });
-    // CreateHero({ heroHP: state.heroHP });
     CreateMessage({ jerkMessage: state.jerkMessage, heroMessage: state.heroMessage });
+    CreateDefeatedJerks({ defeatedJerks: state.defeatedJerks });
 }
 
 // Call display on page load

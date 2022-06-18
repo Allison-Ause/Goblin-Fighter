@@ -1,31 +1,4 @@
-/* main {
-    padding: 0 30px 60px 30px;
 
-    display: grid;
-    grid-template-rows: 350px 1fr;
-    grid-template-areas:
-    'left-display'
-    'right-display'
-    ;
-}
-
-@media (min-width: 600px) {
-    main {
-        grid-template-columns: 275px 1fr;
-        grid-template-areas: 
-        'left-display right-display'
-        ;
-        grid-gap: 0 40px;
-    }
-}
-
-#left-display {
-    grid-area: active-poll;
-}
-
-#right-display {
-    grid-area: past-polls;
-} */
 
 main {
     padding: 10px;
@@ -45,9 +18,6 @@ main {
     margin: 20px;
 }
 
-#hero-image {
-    height: 350px;
-}
 
 .jerk {
     border: 1px solid black;
@@ -62,4 +32,12 @@ main {
 
 .jerks {
     padding-bottom: 75px;
+}
+
+.dead {
+    background: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
+    border-radius: 15%;
+    border: 15px dotted black;
+    padding: 10px;
+    margin: 5px;
 }

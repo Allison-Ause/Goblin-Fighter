@@ -1,15 +1,13 @@
-import { display } from '../app.js';
 import state, { 
     setHeroMessage, 
     setJerkMessage,
     updateJerkHP, 
     updateHeroHP, 
 } from '../state.js';
-
-
+import { display } from '../app.js';
 
 export default function createFight(jerk) {
-    (console.log(jerk));
+
     if (jerk.hp <= 0) {
         return;
     }
@@ -20,28 +18,20 @@ export default function createFight(jerk) {
 
     if (Math.random() < 0.75) {
         jerk.hp--;
-        console.log(state);
-        setHeroMessage('Nice! You punched that jerk right in the kisser!');
+        setHeroMessage(' You punched that jerk right in the kisser! ');
         updateJerkHP(jerk);
     } else {
-        setHeroMessage('Drats, they dodged your blow!');
+        setHeroMessage(' That jerk dodged your blow!');
     }
 
-    if (Math.random() < 0.25) {
+    if (Math.random() < 1) {
         state.heroHP--;
-        setJerkMessage('Arg! That jerk wounded you with their callousness!');
+        setJerkMessage(' That jerk wounded you with their callousness! ');
         updateHeroHP(state);
+        display();
     } else {
-        setJerkMessage('Ha! That jerk tried to swing on you but missed.');
+        setJerkMessage(' That jerk swung and missed. ');
     }
-
-
-    // setTimeout(() => {
-    //     setHeroMessage('');
-    //     setJerkMessage('');
-    //     display();
-    // }, 2000);
-    // delete this 
 
 }
 

@@ -4,6 +4,8 @@ export default function createMessage(root) {
 
     return ({ heroMessage, jerkMessage }) => {
 
+        root.innerHTML = '';
+
         const heroMessageDisplay = document.createElement('div');
         heroMessageDisplay.textContent = heroMessage;
 
@@ -11,10 +13,5 @@ export default function createMessage(root) {
         jerkMessageDisplay.textContent = jerkMessage;
 
         root.append(heroMessage, jerkMessage);
-        setTimeout(() => {
-            heroMessageDisplay.innerHTML = '';
-            jerkMessageDisplay.innerHTML = '';
-            display();
-        }, 2000);
     };
 }

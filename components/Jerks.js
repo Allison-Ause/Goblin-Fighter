@@ -1,8 +1,11 @@
 import createFight from './Fight.js'; //means the one thing
 import { display } from '../app.js'; //curly brackets mean specific
+import state from '../state.js';
+
+const heroHP = document.querySelector('#hero-hp');
 
 export default function createJerks(root) {
-
+    
     return ({ jerks }) => {
         root.innerHTML = '';
 
@@ -10,8 +13,8 @@ export default function createJerks(root) {
             const jerkButton = Jerks({ jerk });
             root.append(jerkButton);
             jerkButton.addEventListener('click', () => {
-                console.log('click works');
                 createFight(jerk);
+                heroHP.textContent = state.heroHP;
                 display();
             });
         }
@@ -28,8 +31,12 @@ export function Jerks({ jerk }) {
 
     const img = document.createElement('img');
     img.classList.add('jerk-image');
-    img.src = '../assets/jerk.png';
-
+    if (jerk.hp > 0) {
+        img.src = '../assets/jerk.png';
+    } else {
+        img.src = '../assets/deadjerk.png';
+    }
+    
     const p2 = document.createElement('p');
     p2.classList.value = 'jerk-hp';
     p2.textContent = jerk.hp;
@@ -38,6 +45,3 @@ export function Jerks({ jerk }) {
 
     return button;
 }
-
-// create a button on each jerk, within the button is where I call the handleFight function
-// 
