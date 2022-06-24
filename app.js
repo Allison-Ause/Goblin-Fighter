@@ -1,16 +1,41 @@
-// import services and utilities
 
-// import component creators
+import getRandomItem from './utils.js';
 
-// import state and dispatch functions
+import createAddJerk from './components/AddJerk.js';
+import createJerks from './components/Jerks.js';
+import createMessage from './components/Message.js';
+import createDefeatedJerks from './components/DefeatedJerks.js';
 
-// Create each component: 
-// - pass in the root element via querySelector
-// - pass any needed handler functions as properties of an actions object 
+import state, {
+    addJerk, setJerkMessage,
+} from './state.js';
 
-// Roll-up display function that renders (calls with state) each component
-function display() {
-    // Call each component passing in props that are the pieces of state this component needs
+const CreateDefeatedJerks = createDefeatedJerks(document.querySelector('#defeated-count'));
+
+const CreateAddJerk = createAddJerk(document.querySelector('#add-jerk'), {
+    handleAddJerk: (name) => {
+
+        const jerk = {
+            name,
+            hp: getRandomItem(state.jerkHP)
+        };
+        addJerk(jerk);
+        setJerkMessage(jerk.name + ' has arrived with ' + jerk.hp + ' hp and we hate it!');
+        display();
+    }
+});
+
+const CreateJerks = createJerks(document.querySelector('.jerks'));
+
+const CreateMessage = createMessage(document.querySelector('#message'));
+
+
+export function display() {
+
+    CreateAddJerk({});
+    CreateJerks({ jerks: state.jerks });
+    CreateMessage({ jerkMessage: state.jerkMessage, heroMessage: state.heroMessage });
+    CreateDefeatedJerks({ defeatedJerks: state.defeatedJerks });
 }
 
 // Call display on page load

@@ -1,5 +1,7 @@
 ## The Golden Rule:
 
+[Miro Wireframe](https://miro.com/app/board/uXjVOs0XmJg=/?share_link_id=316102492317)
+
 🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
 
 1. Limit Work in Progress (WIP)

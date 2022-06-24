@@ -13,16 +13,60 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/home.css" />
-    <title>Web MVC UI</title>
+    <title>Jerk Puncher</title>
 </head>
 
 <body>
     <header>
         <img src="assets/html_css_js.png">
-        <h1>Web MVC UI</h1>
+        <h1>Punch Those Jerks!</h1>
     </header>
 
-    <main></main>
+    <main>
+        <div id="left-display">
+            <section id="message"></section>
+
+            <section id="hero-display">
+                <div id="jerks-defeated">
+                        <p>
+                            You are a hero! You've vanquished 
+                            <span id="defeated-count">0</span>
+                            rude jerks!
+                        </p>
+                </div>
+                <div id="hero">
+                    <p>Hero's HP: 
+                        <span id="hero-hp">10</span>
+                    </p>
+                    <img id="hero-image" src="./assets/hero.png">
+                </div>
+            </section>
+        </div>
+
+        <div id="right-display">
+            <section id="jerk-display">
+                <div id="add-jerk">
+                    <form class="form">
+                        <input name="jerk-name">
+                        <button>Confront Jerk</button>
+                    </form>
+                </div>
+
+                <div class="jerks">
+                    <button class="jerk">
+                        <p class="jerk-name">Rudey Vandersteen</p>
+                        <img class=jerk-image src="./assets/jerk.png">
+                        <p class="jerk-hp" >4</p>
+                    </button>
+                    <button class="jerk">
+                        <p class="jerk-name">Mr. Inconsiderate</p>
+                        <img class=jerk-image src="./assets/jerk.png">
+                        <p class="jerk-hp">3</p>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer>&copy;2022 Aspiring Software Developer</footer>
 

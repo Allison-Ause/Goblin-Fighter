@@ -1,1 +1,43 @@
-/* CSS for home page (index.html) */
+
+
+main {
+    padding: 10px;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+        'message   jerk-form'
+        'hero-display     jerks'
+    ;
+}
+
+#message {
+    border: 5px dotted grey;
+    padding: 30px;
+    margin: 20px;
+}
+
+
+.jerk {
+    border: 1px solid black;
+    border-radius: 5%;
+    background: linear-gradient(44.8deg, rgba(255, 136, 102, 0.67) -53.1%, rgba(255, 221, 136, 0.28) 49%);
+    margin: 20px;
+}
+
+.jerk img {
+    height: 100px;
+}
+
+.jerks {
+    padding-bottom: 75px;
+}
+
+.dead {
+    background: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
+    border-radius: 15%;
+    border: 15px dotted black;
+    padding: 10px;
+    margin: 5px;
+}
