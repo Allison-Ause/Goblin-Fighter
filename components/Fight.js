@@ -24,7 +24,7 @@ export default function createFight(jerk) {
         setHeroMessage(' That jerk dodged your blow!');
     }
 
-    if (Math.random() < 1) {
+    if (Math.random() < 0.33) {
         state.heroHP--;
         setJerkMessage(' That jerk wounded you with their callousness! ');
         updateHeroHP(state);
@@ -32,6 +32,5 @@ export default function createFight(jerk) {
     } else {
         setJerkMessage(' That jerk swung and missed. ');
     }
-
 }
 
